@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Copies local public key to the server for password-less login in the future
+
+cat ~/.ssh/id_rsa.pub | ssh $1 'mkdir .ssh ; cat >>.ssh/authorized_keys'
